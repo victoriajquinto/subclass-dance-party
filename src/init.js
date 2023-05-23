@@ -21,12 +21,9 @@ $(document).ready(function() {
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
-
-    var dancer = new dancerMakerFunction(
-      $('body').height() * Math.random(),
-      $('body').width() * Math.random(),
-      Math.random() * 1000
-    );
+    var x = ($('body').width() - 40) * Math.random() + 20;
+    var y = ($('body').height() - 40) * Math.random() + 20;
+    var dancer = new dancerMakerFunction(y, x, Math.random() * 1000);
     $('body').append(dancer.$node);
   });
 });
