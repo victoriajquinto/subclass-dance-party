@@ -1,10 +1,11 @@
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
   Dancer.apply(this, arguments);
-  // this.$node = $('<span class="blinkyDancer"></span>');
+  // this.$node = $('<span class="dancer blinkyDancer"></span>');
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
   //this.step(timeBetweenSteps);
-  this.$node.toggle();
+  // this.$node.toggle(); //this works
+  this.danceMove; //using this instead to stay consistent with dancer.js syntax
 };
 BlinkyDancer.prototype = Object.create(Dancer.prototype);
 BlinkyDancer.prototype.constructor = BlinkyDancer;
