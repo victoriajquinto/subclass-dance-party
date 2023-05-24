@@ -24,6 +24,15 @@ $(document).ready(function() {
     var x = ($('body').width() - 40) * Math.random() + 20;
     var y = ($('body').height() - 40) * Math.random() + 20;
     var dancer = new dancerMakerFunction(y, x, Math.random() * 1000);
+    window.dancers.push(dancer);
     $('body').append(dancer.$node);
+  });
+
+  //in init file, add a button that has click event listener that activates this method
+  $('.lineUpButton').on('click', function(event) {
+    console.log('lineup activated');
+    for (var f = 0; f < window.dancers.length; f++) {
+      window.dancers[f].lineUp(($('body').height() - 40) * ((f + 0.5) / window.dancers.length) + 20);
+    }
   });
 });

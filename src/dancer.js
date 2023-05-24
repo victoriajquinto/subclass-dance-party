@@ -8,6 +8,10 @@ var Dancer = function(top, left, timeBetweenSteps) {
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
   // this one sets the position to some random default point within the body
   this.setPosition(top, left);
+  this.$node.on('mouseover', function(event) {
+    $(event.target).css('border', '20px solid blue');
+    console.log('mouseover activated');
+  });
 };
 Dancer.prototype.danceMove = function () {
   return true;
@@ -27,4 +31,13 @@ Dancer.prototype.setPosition = function(top, left) {
     left: left
   };
   this.$node.css(styleSettings);
+};
+Dancer.prototype.lineUp = function(top) {
+  this.setPosition(top, 21);
+};
+Dancer.prototype.mouseOver = function() {
+  var changeBorder = {
+    border: pink
+  };
+  this.$node.css(changeBorder);
 };

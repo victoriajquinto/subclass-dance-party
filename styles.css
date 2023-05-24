@@ -3,37 +3,119 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url('../images/dancefloor.jpeg');
+  background-position:0 25%;
+  background-color: black;
   font-size: 18px;
   display: flex;
+  font-family:monospace, 'Times New Roman', Times, serif;
+  font-size: 15px
+}
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+a {
+  text-decoration: none;
 }
 .title{
-  background-color: #777;
+  background-color: #1320cf;
+  margin-left: 10px;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
+.title, .addDancerButton .lineUpBotton{
   padding:5px 12px;
   float:right;
 }
+.lineUpBotton {
+  color: #1320cf;
+}
 .topbar{
   height:32px;
-  background-color: #555;
+  background-image:linear-gradient(45deg, #e0a02a, #1320cf);
+  width: 100%;
+}
+.buttons {
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
 }
 
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  border:20px solid red;
+  border-radius:50%;
   position:absolute;
 }
-.blinkyDancer{
-  border:10px solid red;
-  border-radius:10px;
+.blinky-dancer{
+  border:20px solid red;
+  /* border-radius:10px; */
   position:absolute;
 }
-.movingDancer{
-  border:10px solid blue;
-  border-radius:10px;
+.moving-dancer{
+  border:20px solid blue;
+  /* border-radius:10px; */
   position:absolute;
+}
+.schmoving-dancer{
+  border:20px solid green;
+  /* border-radius:10px; */
+  position:absolute;
+}
+.twirling-dancer {
+  border:0;
+  /* position:absolute; */
+  animation: rotation .7s infinite linear;
+  transform-origin: top left;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.collatz-dancer{
+  border:20px solid cyan;
+  /* border-radius:10px; */
+  position:absolute;
+}
+
+.single-ladies-dancers {
+  border:1px solid purple;
+  position:absolute;
+  width: 50px;
+  height: 50px;
+}
+.wiggling-dancer {
+  border:20px solid #e8a217;
+  border-radius: 2px;
+  position: absolute;
+  animation: wiggle 1s linear infinite;
+}
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
 }
